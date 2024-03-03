@@ -1,0 +1,28 @@
+h4{
+    padding: 24px 0px 0px 24px;
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.day-style{
+    display: flex;
+    border-bottom: 1px solid;
+    padding-top: 1rem;
+}
+
+.expense-style{
+    display: flex;
+}
+
+.column1{
+    font-weight: bold;
+}
+
+p{
+    align-self: flex-end;
+    font-size: large;
+}

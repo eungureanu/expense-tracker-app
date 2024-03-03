@@ -1,0 +1,18 @@
+<h4>Your weekly expense summary</h4>
+
+<div class="table">
+  <div *ngFor="let expenseDay of expensesByDay;" class="day-style"> 
+      <div class="col-md-4 column1">{{ expenseDay.day }}</div>
+      <div class="col-md-8">
+        <div class="row">
+          <div *ngFor="let expense of expenseDay.expenses;" class="expense-style">
+            <div class="col-md-6">{{ expense.category }}</div>
+            <div class="col-md-6">{{ expense.amount }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>Weekly Total: <span class="badge bg-secondary">{{weeklyTotal}}</span></p>
+</div>
+
+<!-- try to use grid components AG Grid etc. to show the list -->

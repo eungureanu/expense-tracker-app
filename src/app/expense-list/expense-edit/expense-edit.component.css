@@ -1,0 +1,13 @@
+form{
+    padding: 24px;
+    margin: 24px;
+    border: 1px solid;
+    display: grid;
+    gap: 10px;
+    justify-content: start;
+}
+
+input, select{
+    margin-left: 5px;
+}
+

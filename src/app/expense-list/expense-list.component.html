@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-xs-12">
+        
+            <app-expense-item 
+            *ngFor="let expense of expensesList" 
+            [expenseItem]="expense"
+            (editClicked)="toggleEdit($event)"> <!-- why do I also need to add it here???-->
+            <!-- <app-expense-item 
+            *ngFor="let expense of expensesList; let i = index" 
+            [expenseItem]="expense" 
+            [index]="i"
+            > --> <!-- can be deleted -->
+            </app-expense-item>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <!-- <app-expense-edit
+        *ngIf="showExpenseNew || showExpenseEdit"
+        (formSubmitted)="toggleNew()"
+        (editClicked)="toggleEdit()"></app-expense-edit> -->
+        <app-expense-edit
+        *ngIf="showExpenseEdit"
+        (formSubmitted)="toggleEdit()"
+        [formData]="editedExpense" 
+        ></app-expense-edit>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 d-flex justify-content-between">
+        <button class="btn btn-success m-3" (click)="toggleEdit($event)">Add Expense</button>
+        <p class="m-3">Daily Total: <span class="badge bg-secondary">{{dailyTotal}}</span></p>
+    </div>
+</div>
+<div class="d-flex justify-content-between p-3">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onPreviousDay()" *ngIf="previousDay!==undefined">Previous Day</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="onNextDay()" *ngIf="nextDay!==undefined">Next Day</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form (ngSubmit)="onSubmit()" #f="ngForm">
+                    <div>
+                        <label for="category">Category</label>
+                        <!-- <input 
+                            type="text" 
+                            id="category" 
+                            ngModel 
+                            name="category" 
+                            required> -->
+                            <select 
+                             id="category" 
+                             name="category"
+                             ngModel>
+                                <option value="Food">Food</option> <!-- enum -->
+                                <option value="Medicine">Medicine</option>
+                                <option value="Clothes">Clothes</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="School">School</option>
+                            </select>
+                    </div>
+                    <div>
+                        <label for="amount">Amount</label>
+                        <input 
+                            type="text" 
+                            id="amount" 
+                            ngModel 
+                            name="amount" 
+                            required>
+                    </div>
+                    <button 
+                        class="btn btn-secondary" 
+                        type="submit"
+                    >
+                    Save</button>
+                </form>
+            </div>
+        </div>
+</div>
